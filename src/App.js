@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import './css/reset.min.css';
 import './css/App.css';
 
+import Header from './components/Header';
 import TodoList from './components/TodoList';
 import todosData from './todosData';
 
@@ -48,6 +49,8 @@ class App extends Component {
   render() {
     return (
         <div className="App">
+
+          <Header />
 
           <div className="App-container">
             <TodoList

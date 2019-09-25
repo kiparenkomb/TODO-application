@@ -1,0 +1,102 @@
+.Header {
+  width: 100%;
+  height: 80px;
+
+  padding: 15px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  background: #25b99a;
+  box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.Header input {
+  width: 100%;
+  height: 50px;
+  padding: 0 60px 0 0;
+
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  text-indent: 18px;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px 25px 25px 5px;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.Header input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.Header input:-moz-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.Header input::-moz-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.Header input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.Header button {
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+
+  border-radius: 25px;
+  background: #fff;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.Header button:before {
+  content: '';
+  display: block;
+
+  width: 16px;
+  height: 2px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background-color: #25b99a;
+}
+
+.Header button:after {
+  content: '';
+  display: block;
+
+  width: 2px;
+  height: 16px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background-color: #25b99a;
+}

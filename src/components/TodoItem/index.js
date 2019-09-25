@@ -7,17 +7,19 @@ import { ReactComponent as CompleteSVG } from '../../svg/complete.svg';
 
 function TodoItem(props) {
 
+    const { id, text, completed } = props.item;
+
     function handleClickComplete() {
-        props.updateDate(props.item.id);
+        props.updateDate(id);
     }
 
     function handleClickRemove() {
-        props.removeDate(props.item.id);
+        props.removeDate(id);
     }
 
     return (
-        <li className={`TodoItem ${props.item.completed ? 'completed' : ''}`}>
-            {props.item.text}
+        <li className={`TodoItem ${completed ? 'completed' : ''}`}>
+            {text}
             <div className="buttons">
                 <button
                     className="remove"

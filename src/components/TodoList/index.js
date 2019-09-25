@@ -4,15 +4,17 @@ import './style.css';
 
 import TodoItem from '../TodoItem/index';
 
-function TodoList() {
+function TodoList(props) {
+
+    const todoItems = props.todos.map(
+        item => <TodoItem
+            key={item.id}
+            item={item}
+        />);
 
     return (
         <ul className="TodoList">
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
+            {todoItems}
         </ul>
     )
 }

@@ -18,6 +18,33 @@ class App extends Component {
     localStorage.setItem('todoList', JSON.stringify(this.state.todos));
   };
 
+  updateDate = id => {
+    this.setState(prevState => {
+      const updatedTodos = prevState.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return {
+        todos: updatedTodos,
+      }
+    },() => {
+      this.updateLocalStorage();
+    });
+  };
+
+  removeDate = id => {
+    this.setState(prevState => {
+      const updatedTodos = prevState.todos.filter((todo) => todo.id !== id);
+      return {
+        todos: updatedTodos,
+      }
+    },() => {
+      this.updateLocalStorage();
+    });
+  };
+
   render() {
     return (
         <div className="App">
@@ -25,6 +52,8 @@ class App extends Component {
           <div className="App-container">
             <TodoList
                 todos={this.state.todos}
+                removeDate={this.removeDate}
+                updateDate={this.updateDate}
             />
           </div>
 

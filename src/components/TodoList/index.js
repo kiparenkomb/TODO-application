@@ -10,6 +10,8 @@ function TodoList(props) {
         item => <TodoItem
             key={item.id}
             item={item}
+            removeDate={props.removeDate}
+            updateDate={props.updateDate}
         />);
 
     return (

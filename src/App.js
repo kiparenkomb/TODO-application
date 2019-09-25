@@ -46,11 +46,29 @@ class App extends Component {
     });
   };
 
+  addItemTop = value => {
+    this.setState(prevState => {
+      const updatedTodos = [
+        {
+          id: `${(+ new Date()).toString(16)}`,
+          text: value,
+          completed: false,
+        },
+        ...prevState.todos
+      ];
+      return {
+        todos: updatedTodos,
+      }
+    },() => {
+      this.updateLocalStorage();
+    });
+  };
+
   render() {
     return (
         <div className="App">
 
-          <Header />
+          <Header addItemTop={this.addItemTop}/>
 
           <div className="App-container">
             <TodoList

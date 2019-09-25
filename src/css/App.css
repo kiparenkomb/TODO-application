@@ -1,0 +1,13 @@
+.App {
+  background-color: #edf0f1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-container {
+  width: 100%;
+  padding: 15px;
+}

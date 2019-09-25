@@ -2,11 +2,17 @@ import React from 'react';
 
 import './style.css';
 
+import TodoItem from '../TodoItem/index';
+
 function TodoList() {
 
     return (
         <ul className="TodoList">
-            TodoList
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
         </ul>
     )
 }

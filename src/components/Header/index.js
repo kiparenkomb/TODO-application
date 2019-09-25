@@ -13,6 +13,14 @@ function Header(props) {
         }
     }
 
+    function handleKeyPress(e) {
+        let value = document.getElementById('item').value;
+
+        if(e.key === 'Enter' && value){
+            addItem(value);
+        }
+    }
+
     function addItem (value) {
         props.addItemTop(value);
     }
@@ -23,6 +31,7 @@ function Header(props) {
                 type="text"
                 placeholder="Enter an activity..."
                 id="item"
+                onKeyPress={handleKeyPress}
             />
             <button
                 id="add"

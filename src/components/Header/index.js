@@ -1,44 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addTodo } from '../../actions';
 
 import './style.css';
 
-function Header(props) {
-
-    function handleClick(e) {
-        e.preventDefault();
-        let value = document.getElementById('item').value;
-
-        if (value) {
-            addItem(value);
-        }
-    }
-
-    function handleKeyPress(e) {
-        let value = document.getElementById('item').value;
-
-        if(e.key === 'Enter' && value){
-            addItem(value);
-        }
-    }
-
-    function addItem (value) {
-        props.addItemTop(value);
-    }
+const Header = ({ dispatch }) => {
+    let input;
 
     return (
         <header className="Header">
-            <input
-                type="text"
-                placeholder="Enter an activity..."
-                id="item"
-                onKeyPress={handleKeyPress}
-            />
-            <button
-                id="add"
-                onClick={handleClick}
-            />
+            <form
+                onSubmit={e => {
+                    e.preventDefault();
+                    if (!input.value.trim()) {
+                        return
+                    }
+                    dispatch(addTodo(input.value));
+                    input.value = ''
+                }}
+            >
+                <input
+                    type="text"
+                    placeholder="Enter an activity..."
+                    ref={node => (input = node)}
+                />
+                <button type="submit" />
+            </form>
         </header>
-    );
-}
+    )
+};
 
-export default Header;
+export default connect()(Header);

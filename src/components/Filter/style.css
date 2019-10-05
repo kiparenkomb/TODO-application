@@ -1,0 +1,20 @@
+.Filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.Filter button {
+  background-color: #51c7ae;
+  color: white;
+  min-width: 50px;
+  padding: 5px 15px;
+  margin-right: 4px;
+  border: 2px solid #25b99a;
+  border-radius: 2px;
+}
+
+.Filter button[disabled] {
+  background-color: #fff;
+  color: #51c7ae;
+}
